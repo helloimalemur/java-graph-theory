@@ -26,8 +26,15 @@ public class Tree {
     public boolean findRecursive(Node head, int value) {
         if (head == null) {return false;}
         if (head.data == value) {return true;}
-        return value<head.data
-                ? findRecursive(head.left, value)
-                : findRecursive(head.right, value);
+
+
+        if (value<head.data) {
+            return findRecursive(head.left, value);
+        } else {
+            return findRecursive(head.right, value);
+        }
+//        return value<head.data
+//                ? findRecursive(head.left, value)
+//                : findRecursive(head.right, value);
     }
 }
