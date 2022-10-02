@@ -1,10 +1,8 @@
 package net.koonts;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        Tree tree = new Tree();
+        TripleTree tree = new TripleTree();
         for (int i=0;i<10;i++) {
             tree.add((int) (Math.random() * 10));
         }

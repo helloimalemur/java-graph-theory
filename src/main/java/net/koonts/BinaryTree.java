@@ -1,6 +1,6 @@
 package net.koonts;
 
-public class Tree {
+public class BinaryTree {
     Node root = null;
     int size = 0;
 
