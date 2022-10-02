@@ -7,6 +7,10 @@ public class BinaryTree {
     public void setRoot(Node root) {
         this.root = root;
     }
+    public void delRoot(Node root) {
+        System.out.println("Deleting root..");
+        this.root = null;
+    }
 
     public Node addRec(Node head, int data) {
         if (head==null) {head = new Node(data);}
@@ -52,6 +56,21 @@ public class BinaryTree {
             traverse(head.left);
             System.out.println(head.data);
             traverse(head.right);
+        }
+    }
+
+    public void removeAll(Node head) {
+        if (head!=null) {
+            removeAll(head.left);
+            if (head.left!=null) {
+                System.out.println("removing.." + head.left.data);
+                head.left = null;
+            }
+            removeAll(head.right);
+            if (head.right!=null) {
+                System.out.println("removing.." + head.right.data);
+                head.right = null;
+            }
         }
     }
 }
