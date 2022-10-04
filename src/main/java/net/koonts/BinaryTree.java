@@ -12,6 +12,10 @@ public class BinaryTree {
         this.root = null;
     }
 
+    public void add(int data) {
+        root = addRec(root, data);
+    }
+
     public Node addRec(Node head, int data) {
         if (head==null) {head = new Node(data);}
         else {
@@ -26,14 +30,10 @@ public class BinaryTree {
         return head;
     }
 
-    public void add(int data) {
-        root = addRec(root, data);
-    }
-
     public boolean findRecursive(Node head, int value) {
         if (head == null) {return false;}
         if (head.data == value) {return true;}
-        if (value<head.data) {
+        if (value < head.data) {
             return findRecursive(head.left, value);
         } else {
             return findRecursive(head.right, value);
@@ -43,7 +43,7 @@ public class BinaryTree {
 //                : findRecursive(head.right, value);
     }
     public int getTreeSize(Node head) {
-        if (head!=null) {
+        if (head != null) {
             size++;
             getTreeSize(head.left);
             getTreeSize(head.right);
@@ -52,7 +52,7 @@ public class BinaryTree {
     }
 
     public void traverse(Node head) {
-        if (head!=null) {
+        if ( head != null ) {
             traverse(head.left);
             System.out.println(head.data);
             traverse(head.right);
@@ -65,6 +65,7 @@ public class BinaryTree {
             if (head.left!=null) {
                 System.out.println("removing.." + head.left.data);
                 head.left = null;
+
             }
             removeAll(head.right);
             if (head.right!=null) {
