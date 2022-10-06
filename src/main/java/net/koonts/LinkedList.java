@@ -29,7 +29,7 @@ public class LinkedList {
             }
         }
     }
-    public void delroot() {
+    public void delRoot() {
         this.root = null;
     }
 
