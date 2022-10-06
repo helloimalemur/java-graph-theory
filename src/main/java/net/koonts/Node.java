@@ -7,6 +7,7 @@ public class Node {
     Node right;
     Node center;
     Node parent;
+    Node next;
     Node() {
     }
     Node(int data) {
